@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mic Constraints</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Mic Constraints</h1>
+    <label class="switch">
+      <input type="checkbox" id="enabled">
+      <span>Enabled</span>
+    </label>
+  </header>
+
+  <main id="flags">
+    <fieldset data-flag="autoGainControl">
+      <legend>Auto gain control</legend>
+      <label><input type="radio" name="autoGainControl" value="site"><span>Site</span></label>
+      <label><input type="radio" name="autoGainControl" value="on"><span>On</span></label>
+      <label><input type="radio" name="autoGainControl" value="off"><span>Off</span></label>
+    </fieldset>
+
+    <fieldset data-flag="noiseSuppression">
+      <legend>Noise suppression</legend>
+      <label><input type="radio" name="noiseSuppression" value="site"><span>Site</span></label>
+      <label><input type="radio" name="noiseSuppression" value="on"><span>On</span></label>
+      <label><input type="radio" name="noiseSuppression" value="off"><span>Off</span></label>
+    </fieldset>
+
+    <fieldset data-flag="echoCancellation">
+      <legend>Echo cancellation</legend>
+      <label><input type="radio" name="echoCancellation" value="site"><span>Site</span></label>
+      <label><input type="radio" name="echoCancellation" value="on"><span>On</span></label>
+      <label><input type="radio" name="echoCancellation" value="off"><span>Off</span></label>
+    </fieldset>
+  </main>
+
+  <section class="status">
+    <h2>Applied in this tab</h2>
+    <p id="report">No microphone opened in this tab yet.</p>
+  </section>
+
+  <footer>Changes apply the next time a site opens the mic. Reload the page.</footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

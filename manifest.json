@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Mic Constraints",
+  "version": "1.0.0",
+  "description": "Force echo cancellation, noise suppression and auto gain control on or off for every site that opens your microphone.",
+  "permissions": ["storage"],
+  "action": {
+    "default_title": "Mic Constraints",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["inject.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["bridge.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}
